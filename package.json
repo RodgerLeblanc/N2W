@@ -56,527 +56,60 @@
         "resources": {
             "media": [
                 {
-                    "file": "images/youtube_34.png",
-                    "name": "ICON_YOUTUBE_34",
+                    "characterRegex": "[0-9%]",
+                    "file": "fonts/BrownBagLunch.ttf",
+                    "name": "BROWNBAG_30",
                     "targetPlatforms": null,
-                    "type": "bitmap"
+                    "trackingAdjust": -2,
+                    "type": "font"
                 },
                 {
-                    "file": "images/wind_34.png",
-                    "name": "WIND_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/whatsapp_34.png",
-                    "name": "ICON_WHATSAPP_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/wechat_34.png",
-                    "name": "ICON_WECHAT_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/voicemail_34.png",
-                    "name": "ICON_VOICEMAIL_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/vk10_34.png",
-                    "name": "ICON_VK10_34",
+                    "characterRegex": "[0-9 \\*-\u00b0%]",
+                    "file": "fonts/FatCow.ttf",
+                    "name": "FONT_FATCOW_36",
                     "targetPlatforms": null,
-                    "type": "bitmap"
+                    "type": "font"
                 },
                 {
-                    "file": "images/vip_34.png",
-                    "name": "ICON_VIP_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/vine_34.png",
-                    "name": "ICON_VINE_34",
+                    "characterRegex": "[0-9 \\*-\u00b0%]",
+                    "file": "fonts/futura.ttf",
+                    "name": "FUTURA_18",
                     "targetPlatforms": null,
-                    "type": "bitmap"
+                    "trackingAdjust": -2,
+                    "type": "font"
                 },
                 {
-                    "file": "images/viber_34.png",
-                    "name": "ICON_VIBER_34",
+                    "characterRegex": "[0-9 \\*-\u00b0%]",
+                    "file": "fonts/futura.ttf",
+                    "name": "FUTURA_35",
                     "targetPlatforms": null,
-                    "type": "bitmap"
+                    "trackingAdjust": -4,
+                    "type": "font"
                 },
                 {
-                    "file": "images/twittly_34.png",
-                    "name": "ICON_TWITTLY_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/twitter_34.png",
-                    "name": "ICON_TWITTER_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tumblr_34.png",
-                    "name": "ICON_TUMBLR_34",
+                    "characterRegex": "[0-9 \\*-\u00b0%]",
+                    "file": "fonts/futura_condensed_bold-webfont.ttf",
+                    "name": "FUTURA_CONDENSED_18",
                     "targetPlatforms": null,
-                    "type": "bitmap"
+                    "trackingAdjust": -4,
+                    "type": "font"
                 },
                 {
-                    "file": "images/tinder_34.png",
-                    "name": "ICON_TINDER_34",
+                    "file": "fonts/futura_condensed_bold-webfont.ttf",
+                    "name": "FUTURA_CONDENSED_43",
                     "targetPlatforms": null,
-                    "type": "bitmap"
+                    "type": "font"
                 },
                 {
-                    "file": "images/thunder_34.png",
-                    "name": "THUNDER_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/threema_34.png",
-                    "name": "ICON_THREEMA_34",
+                    "file": "fonts/futura_condensed_bold-webfont.ttf",
+                    "name": "FUTURA_CONDENSED_53",
                     "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/tethering_34.png",
-                    "name": "ICON_TETHERING_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/telegram_34.png",
-                    "name": "ICON_TELEGRAM_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/talk_34.png",
-                    "name": "ICON_GOOGLE_TALK_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/szde_34.png",
-                    "name": "ICON_SZDE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/snow_34.png",
-                    "name": "SNOW_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/snow-sleet_34.png",
-                    "name": "SNOW_SLEET_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/snapchat_34.png",
-                    "name": "ICON_SNAPCHAT_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/sms_34.png",
-                    "name": "ICON_TEXT_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/smartphone.png",
-                    "name": "ICON_SMARTPHONE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/sleet_34.png",
-                    "name": "SLEET_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/slack_34.png",
-                    "name": "ICON_SLACK_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/skype_34.png",
-                    "name": "ICON_SKYPE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/screenshot_34.png",
-                    "name": "ICON_SCREENSHOT_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/runner_34.png",
-                    "name": "ICON_RUNNER_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/rain_34.png",
-                    "name": "RAIN_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/rain-snow_34.png",
-                    "name": "RAIN_SNOW_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/rain-sleet_34.png",
-                    "name": "RAIN_SLEET_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/quickpost_34.png",
-                    "name": "ICON_QUICKPOST_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/pushbullet_34.png",
-                    "name": "ICON_PUSHBULLET_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/pinterest_34.png",
-                    "name": "ICON_PINTEREST_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/phone_error_34.png",
-                    "name": "PHONE_ERROR_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/phone_34.png",
-                    "name": "ICON_CALL_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/periscope_34.png",
-                    "name": "ICON_PERISCOPE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/pebble.png",
-                    "name": "ICON_PEBBLE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/paypal_34.png",
-                    "name": "ICON_PAYPAL_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/partly-cloudy-night_34.png",
-                    "name": "PARTLY_CLOUDY_NIGHT_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/partly-cloudy-day_34.png",
-                    "name": "PARTLY_CLOUDY_DAY_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/onedrive_34.png",
-                    "name": "ICON_ONEDRIVE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/notification_34.png",
-                    "name": "ICON_NOTIFICATION_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/not-available_34.png",
-                    "name": "NOT_AVAILABLE_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/n2w_34.png",
-                    "name": "ICON_NOTIF2WATCH_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/music_34.png",
-                    "name": "ICON_MUSIC_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/menu_icon.png",
-                    "menuIcon": true,
-                    "name": "MENU_ICON",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/meetup_34.png",
-                    "name": "ICON_MEETUP_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/linkedin_34.png",
-                    "name": "ICON_LINKEDIN_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/line_34.png",
-                    "name": "ICON_LINE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/lemonde_34.png",
-                    "name": "ICON_LE_MONDE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/just10_34.png",
-                    "name": "ICON_JUST10_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/instagram_34.png",
-                    "name": "ICON_INSTAGRAM_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/ic_pin_34.png",
-                    "name": "ICON_PIN_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/hub_34.png",
-                    "name": "ICON_HUB_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/hot_34.png",
-                    "name": "HOT_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/hg10_34.png",
-                    "name": "ICON_HG10_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/grindr_34.png",
-                    "name": "ICON_GRINDR_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/google_plus_34.png",
-                    "name": "ICON_GOOGLE_PLUS_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/google_play_34.png",
-                    "name": "ICON_GOOGLE_PLAY_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/google_photos_34.png",
-                    "name": "ICON_GOOGLE_PHOTOS_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/google_keep_34.png",
-                    "name": "ICON_GOOGLE_KEEP_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/google_drive_34.png",
-                    "name": "ICON_GOOGLE_DRIVE_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/google_allo_34.png",
-                    "name": "ICON_GOOGLE_ALLO_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/gmail_34.png",
-                    "name": "ICON_GMAIL_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/foursquare_34.png",
-                    "name": "ICON_FOURSQUARE_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/fog_34.png",
-                    "name": "FOG_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/fiverr_34.png",
-                    "name": "ICON_FIVERR_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/facebook_messenger_34.png",
-                    "name": "ICON_MESSENGER_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/facebook_34.png",
-                    "name": "ICON_FACEBOOK_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/face10_34.png",
-                    "name": "ICON_FACE10_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/eurosport_34.png",
-                    "name": "ICON_EUROSPORT_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/empty_34.png",
-                    "name": "ICON_EMPTY_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/email_34.png",
-                    "name": "ICON_EMAIL_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/dropbox_34.png",
-                    "name": "ICON_DROPBOX_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/drizzle_34.png",
-                    "name": "DRIZZLE_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/discord_34.png",
-                    "name": "ICON_DISCORD_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/deliveries_34.png",
-                    "name": "ICON_DELIVERIES_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/db_navigator_34.png",
-                    "name": "ICON_DB_NAVIGATOR_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/dashboard_34.png",
-                    "name": "ICON_DASHBOARD_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/cold_34.png",
-                    "name": "COLD_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/cloudy_34.png",
-                    "name": "CLOUDY_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/cloud-error_34.png",
-                    "name": "CLOUD_ERROR_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/clear-night_34.png",
-                    "name": "CLEAR_NIGHT_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/clear-day_34.png",
-                    "name": "CLEAR_DAY_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/chrome_download_34.png",
-                    "name": "ICON_CHROME_DOWNLOAD_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/calendar_34.png",
-                    "name": "ICON_CALENDAR_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/box_34.png",
-                    "name": "ICON_BOX_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/blaq_34.png",
-                    "name": "ICON_BLAQ_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/bbm_34.png",
-                    "name": "ICON_BBM_34",
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/badoo_34.png",
-                    "name": "ICON_BADOO_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/android_34.png",
-                    "name": "ICON_ANDROID_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
+                    "type": "font"
                 },
                 {
                     "characterRegex": "[0-9%]",
-                    "file": "fonts/libel-suit-rg.ttf",
-                    "name": "LIBEL_26",
+                    "file": "fonts/gnuolane rg.ttf",
+                    "name": "GNUOLANE_24",
                     "targetPlatforms": null,
                     "trackingAdjust": -1,
                     "type": "font"
@@ -590,62 +123,529 @@
                 },
                 {
                     "characterRegex": "[0-9%]",
-                    "file": "fonts/gnuolane rg.ttf",
-                    "name": "GNUOLANE_24",
+                    "file": "fonts/libel-suit-rg.ttf",
+                    "name": "LIBEL_26",
                     "targetPlatforms": null,
                     "trackingAdjust": -1,
                     "type": "font"
                 },
                 {
-                    "file": "fonts/futura_condensed_bold-webfont.ttf",
-                    "name": "FUTURA_CONDENSED_53",
+                    "file": "images/android_34.png",
+                    "name": "ICON_ANDROID_34",
                     "targetPlatforms": null,
-                    "type": "font"
+                    "type": "bitmap"
                 },
                 {
-                    "file": "fonts/futura_condensed_bold-webfont.ttf",
-                    "name": "FUTURA_CONDENSED_43",
+                    "file": "images/badoo_34.png",
+                    "name": "ICON_BADOO_34",
                     "targetPlatforms": null,
-                    "type": "font"
+                    "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9 \\*-\u00b0%]",
-                    "file": "fonts/futura_condensed_bold-webfont.ttf",
-                    "name": "FUTURA_CONDENSED_18",
-                    "targetPlatforms": null,
-                    "trackingAdjust": -4,
-                    "type": "font"
+                    "file": "images/bbm_34.png",
+                    "name": "ICON_BBM_34",
+                    "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9 \\*-\u00b0%]",
-                    "file": "fonts/futura.ttf",
-                    "name": "FUTURA_35",
-                    "targetPlatforms": null,
-                    "trackingAdjust": -4,
-                    "type": "font"
+                    "file": "images/blaq_34.png",
+                    "name": "ICON_BLAQ_34",
+                    "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9 \\*-\u00b0%]",
-                    "file": "fonts/futura.ttf",
-                    "name": "FUTURA_18",
+                    "file": "images/box_34.png",
+                    "name": "ICON_BOX_34",
                     "targetPlatforms": null,
-                    "trackingAdjust": -2,
-                    "type": "font"
+                    "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9 \\*-\u00b0%]",
-                    "file": "fonts/FatCow.ttf",
-                    "name": "FONT_FATCOW_36",
-                    "targetPlatforms": null,
-                    "type": "font"
+                    "file": "images/calendar_34.png",
+                    "name": "ICON_CALENDAR_34",
+                    "type": "bitmap"
                 },
                 {
-                    "characterRegex": "[0-9%]",
-                    "file": "fonts/BrownBagLunch.ttf",
-                    "name": "BROWNBAG_30",
+                    "file": "images/chrome_download_34.png",
+                    "name": "ICON_CHROME_DOWNLOAD_34",
                     "targetPlatforms": null,
-                    "trackingAdjust": -2,
-                    "type": "font"
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/clear-day_34.png",
+                    "name": "CLEAR_DAY_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/clear-night_34.png",
+                    "name": "CLEAR_NIGHT_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/cloud-error_34.png",
+                    "name": "CLOUD_ERROR_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/cloudy_34.png",
+                    "name": "CLOUDY_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/cold_34.png",
+                    "name": "COLD_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/dashboard_34.png",
+                    "name": "ICON_DASHBOARD_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/db_navigator_34.png",
+                    "name": "ICON_DB_NAVIGATOR_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/deliveries_34.png",
+                    "name": "ICON_DELIVERIES_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/discord_34.png",
+                    "name": "ICON_DISCORD_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/drizzle_34.png",
+                    "name": "DRIZZLE_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/dropbox_34.png",
+                    "name": "ICON_DROPBOX_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/email_34.png",
+                    "name": "ICON_EMAIL_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/empty_34.png",
+                    "name": "ICON_EMPTY_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/eurosport_34.png",
+                    "name": "ICON_EUROSPORT_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/face10_34.png",
+                    "name": "ICON_FACE10_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/facebook_34.png",
+                    "name": "ICON_FACEBOOK_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/facebook_messenger_34.png",
+                    "name": "ICON_MESSENGER_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/fiverr_34.png",
+                    "name": "ICON_FIVERR_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/fog_34.png",
+                    "name": "FOG_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/foursquare_34.png",
+                    "name": "ICON_FOURSQUARE_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/gmail_34.png",
+                    "name": "ICON_GMAIL_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/google_allo_34.png",
+                    "name": "ICON_GOOGLE_ALLO_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/google_drive_34.png",
+                    "name": "ICON_GOOGLE_DRIVE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/google_keep_34.png",
+                    "name": "ICON_GOOGLE_KEEP_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/google_photos_34.png",
+                    "name": "ICON_GOOGLE_PHOTOS_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/google_play_34.png",
+                    "name": "ICON_GOOGLE_PLAY_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/google_plus_34.png",
+                    "name": "ICON_GOOGLE_PLUS_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/grindr_34.png",
+                    "name": "ICON_GRINDR_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/hg10_34.png",
+                    "name": "ICON_HG10_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/hot_34.png",
+                    "name": "HOT_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/hub_34.png",
+                    "name": "ICON_HUB_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/ic_pin_34.png",
+                    "name": "ICON_PIN_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/instagram_34.png",
+                    "name": "ICON_INSTAGRAM_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/just10_34.png",
+                    "name": "ICON_JUST10_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/lemonde_34.png",
+                    "name": "ICON_LE_MONDE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/line_34.png",
+                    "name": "ICON_LINE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/linkedin_34.png",
+                    "name": "ICON_LINKEDIN_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/meetup_34.png",
+                    "name": "ICON_MEETUP_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/menu_icon.png",
+                    "menuIcon": true,
+                    "name": "MENU_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/music_34.png",
+                    "name": "ICON_MUSIC_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/n2w_34.png",
+                    "name": "ICON_NOTIF2WATCH_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/not-available_34.png",
+                    "name": "NOT_AVAILABLE_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/notification_34.png",
+                    "name": "ICON_NOTIFICATION_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/onedrive_34.png",
+                    "name": "ICON_ONEDRIVE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/partly-cloudy-day_34.png",
+                    "name": "PARTLY_CLOUDY_DAY_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/partly-cloudy-night_34.png",
+                    "name": "PARTLY_CLOUDY_NIGHT_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/paypal_34.png",
+                    "name": "ICON_PAYPAL_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/pebble.png",
+                    "name": "ICON_PEBBLE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/periscope_34.png",
+                    "name": "ICON_PERISCOPE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/phone_34.png",
+                    "name": "ICON_CALL_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/phone_error_34.png",
+                    "name": "PHONE_ERROR_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/pinterest_34.png",
+                    "name": "ICON_PINTEREST_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/pushbullet_34.png",
+                    "name": "ICON_PUSHBULLET_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/quickpost_34.png",
+                    "name": "ICON_QUICKPOST_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/rain-sleet_34.png",
+                    "name": "RAIN_SLEET_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/rain-snow_34.png",
+                    "name": "RAIN_SNOW_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/rain_34.png",
+                    "name": "RAIN_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/runner_34.png",
+                    "name": "ICON_RUNNER_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/screenshot_34.png",
+                    "name": "ICON_SCREENSHOT_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/skype_34.png",
+                    "name": "ICON_SKYPE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/slack_34.png",
+                    "name": "ICON_SLACK_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/sleet_34.png",
+                    "name": "SLEET_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/smartphone.png",
+                    "name": "ICON_SMARTPHONE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/sms_34.png",
+                    "name": "ICON_TEXT_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/snapchat_34.png",
+                    "name": "ICON_SNAPCHAT_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/snow-sleet_34.png",
+                    "name": "SNOW_SLEET_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/snow_34.png",
+                    "name": "SNOW_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/szde_34.png",
+                    "name": "ICON_SZDE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/talk_34.png",
+                    "name": "ICON_GOOGLE_TALK_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/telegram_34.png",
+                    "name": "ICON_TELEGRAM_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tethering_34.png",
+                    "name": "ICON_TETHERING_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/threema_34.png",
+                    "name": "ICON_THREEMA_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/thunder_34.png",
+                    "name": "THUNDER_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tinder_34.png",
+                    "name": "ICON_TINDER_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/tumblr_34.png",
+                    "name": "ICON_TUMBLR_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/twitter_34.png",
+                    "name": "ICON_TWITTER_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/twittly_34.png",
+                    "name": "ICON_TWITTLY_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/viber_34.png",
+                    "name": "ICON_VIBER_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/vine_34.png",
+                    "name": "ICON_VINE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/vip_34.png",
+                    "name": "ICON_VIP_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/vk10_34.png",
+                    "name": "ICON_VK10_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/voicemail_34.png",
+                    "name": "ICON_VOICEMAIL_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/wechat_34.png",
+                    "name": "ICON_WECHAT_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/whatsapp_34.png",
+                    "name": "ICON_WHATSAPP_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/wind_34.png",
+                    "name": "WIND_34",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/youtube_34.png",
+                    "name": "ICON_YOUTUBE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
                 }
             ]
         },
