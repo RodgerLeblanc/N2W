@@ -1,0 +1,1 @@
+char owm_api_key[] = "";
