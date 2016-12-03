@@ -597,9 +597,11 @@
                     "type": "font"
                 },
                 {
+                    "characterRegex": "[0-9 \\*-\u00b0%]",
                     "file": "fonts/futura_condensed_bold-webfont.ttf",
-                    "name": "FUTURA_CONDENSED_53",
+                    "name": "FUTURA_CONDENSED_18",
                     "targetPlatforms": null,
+                    "trackingAdjust": -4,
                     "type": "font"
                 },
                 {
@@ -609,19 +611,9 @@
                     "type": "font"
                 },
                 {
-                    "characterRegex": "[0-9 \\*-\u00b0%]",
                     "file": "fonts/futura_condensed_bold-webfont.ttf",
-                    "name": "FUTURA_CONDENSED_18",
+                    "name": "FUTURA_CONDENSED_53",
                     "targetPlatforms": null,
-                    "trackingAdjust": -4,
-                    "type": "font"
-                },
-                {
-                    "characterRegex": "[0-9 \\*-\u00b0%]",
-                    "file": "fonts/futura.ttf",
-                    "name": "FUTURA_35",
-                    "targetPlatforms": null,
-                    "trackingAdjust": -4,
                     "type": "font"
                 },
                 {
@@ -630,6 +622,14 @@
                     "name": "FUTURA_18",
                     "targetPlatforms": null,
                     "trackingAdjust": -2,
+                    "type": "font"
+                },
+                {
+                    "characterRegex": "[0-9 \\*-\u00b0%]",
+                    "file": "fonts/futura.ttf",
+                    "name": "FUTURA_35",
+                    "targetPlatforms": null,
+                    "trackingAdjust": -4,
                     "type": "font"
                 },
                 {
