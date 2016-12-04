@@ -1,1 +1,0 @@
-char owm_api_key[] = "6757c9f1cfd05d42b1f251ba194265a5";
