@@ -9,6 +9,8 @@
 #include "vibration.h"
 #include "weather.h"
 
+#include <pebble-events/pebble-events.h>
+
 static Window *window;
 static TextLayer *date_layer;
 static TextLayer *time_layer;
@@ -49,6 +51,11 @@ static int pebble_percent = 0;
 
 CLAYSETTINGS settings; // Actual settings object
 WEATHERDATA weatherData; // Actual weatherData object
+
+EventHandle battery_state_event_handle;
+EventHandle tick_timer_event_handle;
+EventHandle app_message_event_handle;
+EventHandle connection_event_handle;
 
 static void battery_proc(Layer *layer, GContext *ctx) {
   bool isPhone = (layer == phone_level_indicator_layer);
@@ -784,8 +791,14 @@ void bluetooth_handler(bool connected) {
 }
 
 static void init() {
-  app_message_register_inbox_received(inbox_received_handler);
-  app_message_open(1024, 1024);
+  EventAppMessageHandlers app_message_handlers = {
+	  .received = inbox_received_handler
+  };
+	
+  app_message_event_handle = events_app_message_subscribe_handlers(app_message_handlers, NULL);
+  events_app_message_request_inbox_size(1024);
+  events_app_message_request_outbox_size(1024);
+  events_app_message_open();
 	
   clay_set_default_settings(&settings);
   weatherData = settings.last_weather_data;
@@ -813,21 +826,24 @@ static void init() {
   time_t now = time(NULL);
   handle_tick(localtime(&now), MINUTE_UNIT | DAY_UNIT );
   // And then every minute
-  tick_timer_service_subscribe(MINUTE_UNIT, handle_tick);
+  tick_timer_event_handle = events_tick_timer_service_subscribe(MINUTE_UNIT, handle_tick);
 
   bluetooth_handler(bluetooth_connection_service_peek());
-  bluetooth_connection_service_subscribe( bluetooth_handler );
-	
+  ConnectionHandlers connection_handlers = {
+	  .pebble_app_connection_handler = bluetooth_handler
+  };
+  connection_event_handle = events_connection_service_subscribe(connection_handlers);
+  
   outbound_ask_notif2watch_to_refresh();
 	
-  battery_state_service_subscribe(&battery_handler);
+  battery_state_event_handle = events_battery_state_service_subscribe(&battery_handler);
   battery_handler(battery_state_service_peek());
 	
   weather_init(fetch_weather);
 }
 
 static void deinit() {
-  app_message_deregister_callbacks();
+  events_app_message_unsubscribe(app_message_event_handle);
 	
   animation_unschedule_all();
   if (prop_anim1) property_animation_destroy(prop_anim1);
@@ -839,9 +855,9 @@ static void deinit() {
   app_timer_cancel_safe(reconnection_delay_timer);
   app_timer_cancel_safe(ask_notif2watch_to_refresh_timer);
 	
-  battery_state_service_unsubscribe();
-  tick_timer_service_unsubscribe();
-  bluetooth_connection_service_unsubscribe();
+  events_battery_state_service_unsubscribe(battery_state_event_handle);
+  events_tick_timer_service_unsubscribe(tick_timer_event_handle);
+  events_connection_service_unsubscribe(connection_event_handle);
 	
   fonts_unload_custom_font(font_time);
   fonts_unload_custom_font(large_font);

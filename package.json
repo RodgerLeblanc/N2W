@@ -2,6 +2,7 @@
     "author": "CellNinja",
     "dependencies": {
         "pebble-clay": "^1.0.0",
+        "pebble-events": "^1.2.0",
         "pebble-generic-weather": "^1.1.6"
     },
     "keywords": [],
