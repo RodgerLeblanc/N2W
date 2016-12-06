@@ -598,11 +598,9 @@
                     "type": "font"
                 },
                 {
-                    "characterRegex": "[0-9 \\*-\u00b0%]",
                     "file": "fonts/futura_condensed_bold-webfont.ttf",
-                    "name": "FUTURA_CONDENSED_18",
+                    "name": "FUTURA_CONDENSED_53",
                     "targetPlatforms": null,
-                    "trackingAdjust": -4,
                     "type": "font"
                 },
                 {
@@ -612,17 +610,11 @@
                     "type": "font"
                 },
                 {
-                    "file": "fonts/futura_condensed_bold-webfont.ttf",
-                    "name": "FUTURA_CONDENSED_53",
-                    "targetPlatforms": null,
-                    "type": "font"
-                },
-                {
                     "characterRegex": "[0-9 \\*-\u00b0%]",
-                    "file": "fonts/futura.ttf",
-                    "name": "FUTURA_18",
+                    "file": "fonts/futura_condensed_bold-webfont.ttf",
+                    "name": "FUTURA_CONDENSED_18",
                     "targetPlatforms": null,
-                    "trackingAdjust": -2,
+                    "trackingAdjust": -4,
                     "type": "font"
                 },
                 {
@@ -631,6 +623,14 @@
                     "name": "FUTURA_35",
                     "targetPlatforms": null,
                     "trackingAdjust": -4,
+                    "type": "font"
+                },
+                {
+                    "characterRegex": "[0-9 \\*-\u00b0%]",
+                    "file": "fonts/futura.ttf",
+                    "name": "FUTURA_18",
+                    "targetPlatforms": null,
+                    "trackingAdjust": -2,
                     "type": "font"
                 },
                 {
@@ -652,11 +652,7 @@
         },
         "sdkVersion": "3",
         "targetPlatforms": [
-            "aplite",
-            "basalt",
-            "chalk",
-            "diorite",
-            "emery"
+            "basalt"
         ],
         "uuid": "28AF3DC7-E40D-490F-BEF2-29548C8BEEA1",
         "watchapp": {
