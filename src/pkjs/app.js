@@ -4,7 +4,7 @@ var clay = new Clay(clayConfig);
 
 var noCityErrorShown = false;
 var weatherApi = "";
-var weatherService = 0;
+var weatherService = -1;
 var lastPosition = {};
 
 var settings = {};
@@ -68,6 +68,9 @@ var locationOptions = {
 
 function locationSuccess(pos) {
 	lastPosition = pos.coords;
+	
+	if (weatherService === -1) return;
+	
 	if (weatherService === 0)
 		fetchYahooWeather();
 	else
@@ -90,7 +93,8 @@ function locationError(err) {
 Pebble.addEventListener("ready", function() {
 	retrieveSettings();
 	send_dict(-1);
-	navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
+	if (!city)
+		navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions);
 });
 
 function iconFromYahooIcon(code)  {

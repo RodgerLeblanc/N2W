@@ -310,6 +310,8 @@ void set_weather_bitmap_and_text(int icon, int degree) {
 
 static void inbox_received_handler(DictionaryIterator *iter, void *context) {
   bool refresh_needed = false;
+  bool js_is_ready_signal = false;
+	
   APP_LOG(APP_LOG_LEVEL_DEBUG, "*** INBOX ***");
   Tuple *tuple = dict_read_first(iter);
   while (tuple) {
@@ -337,8 +339,6 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
     	case HUB8_ACCOUNT_KEY: {
 			int tupleValue = tuple->value->uint8;
 			if (template_icons[tuple->key].number != tupleValue) {
-				GRect position = template_icons[tuple->key].position;
-
 				template_icons[tuple->key].number = tupleValue;
 
 				if (template_icons[tuple->key].bitmap) {
@@ -601,14 +601,8 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 			break;
 		}
 		case JS_IS_READY: {
-			if (weather_is_last_weather_valid(&weatherData)) {
-				APP_LOG(APP_LOG_LEVEL_DEBUG, "Use last weather data");
-				// Use last weather data
-				set_weather_bitmap_and_text(weatherData.icon, weatherData.degree);
-			}
-			else {
-				weather_timeout();
-			}
+			js_is_ready_signal = true;
+			weather_timeout();
 			break;
 		}
 		default: {
@@ -618,6 +612,11 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
   	tuple = dict_read_next(iter);
   }
   APP_LOG(APP_LOG_LEVEL_DEBUG, "*** END ***");
+	
+  if (js_is_ready_signal) {
+	  outbound_ask_notif2watch_to_refresh();
+	  app_timer_register(2000, weather_timeout, NULL);
+  } 
 	
   if (refresh_needed) {
 	window_set_background_color(window, settings.time_background_color);
@@ -635,15 +634,8 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 	set_icon_color(weather_icon.bitmap, settings.notification_text_color); 
 	  
 	weather_timeout();
-	//app_timer_reschedule(weather_timer, 1000);
-	 
-	if (ask_notif2watch_to_refresh_timer) {
-		app_timer_reschedule(ask_notif2watch_to_refresh_timer, 5000);
-	} else {
-		if (!debug_simulate_notification_count >= 0) {
-			ask_notif2watch_to_refresh_timer = app_timer_register(5000, outbound_ask_notif2watch_to_refresh, NULL);
-		}
-	}
+	
+	app_timer_cancel_safe(ask_notif2watch_to_refresh_timer);
   }
 }
 
@@ -833,8 +825,6 @@ static void init() {
 	  .pebble_app_connection_handler = bluetooth_handler
   };
   connection_event_handle = events_connection_service_subscribe(connection_handlers);
-  
-  outbound_ask_notif2watch_to_refresh();
 	
   battery_state_event_handle = events_battery_state_service_subscribe(&battery_handler);
   battery_handler(battery_state_service_peek());

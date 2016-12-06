@@ -1,6 +1,7 @@
 #include <pebble.h>
 #include "clay_settings.h"
 #include "commons.h"
+#include "log.h"
 
 void clay_migrate_storage_data(CLAYSETTINGS *settings) {
   // Check the last storage scheme version the app used
@@ -14,6 +15,8 @@ void clay_migrate_storage_data(CLAYSETTINGS *settings) {
     // No migration necessary
     return;
   }
+	
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Migrating from ClaySettingsVersion%i to ClaySettingsVersion%i", last_storage_version, STORAGE_VERSION);
 
   // Migrate data
   switch(last_storage_version) {
