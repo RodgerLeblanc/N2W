@@ -101,7 +101,7 @@ typedef struct ClaySettingsVersion5 {
 typedef ClaySettingsVersion5 CLAYSETTINGS; // Use CLAYSETTINGS to reference the latest ClaySettingsVersionX
 typedef WeatherData2 WEATHERDATA; // Use WEATHERDATA to reference the latest WeatherDataX
 
-void clay_migrate_storage_data(CLAYSETTINGS *settings);
+bool clay_migrate_storage_data(CLAYSETTINGS *settings);
 bool clay_loadPersistentSettings(CLAYSETTINGS *settings);
 void clay_savePersistentSettings(CLAYSETTINGS *settings, WEATHERDATA *weatherData);
 void clay_set_default_settings(CLAYSETTINGS *settings);

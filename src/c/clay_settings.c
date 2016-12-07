@@ -3,17 +3,17 @@
 #include "commons.h"
 #include "log.h"
 
-void clay_migrate_storage_data(CLAYSETTINGS *settings) {
+bool clay_migrate_storage_data(CLAYSETTINGS *settings) {
   // Check the last storage scheme version the app used
 	int last_storage_version = 0; // default value
 	if (persist_exists(STORAGE_VERSION_KEY)) {
 		last_storage_version = persist_read_int(STORAGE_VERSION_KEY);
 	}
-	else { return; }
+	else { return false; }
 
   if (last_storage_version == STORAGE_VERSION) {
     // No migration necessary
-    return;
+    return true;
   }
 	
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Migrating from ClaySettingsVersion%i to ClaySettingsVersion%i", last_storage_version, STORAGE_VERSION);
@@ -170,10 +170,17 @@ void clay_migrate_storage_data(CLAYSETTINGS *settings) {
 		persist_write_data(CLAY_SETTINGS_KEY, settings, sizeof(*settings));
 		break;
 	}
+	default: {
+		// ClaySettingsVersion saved is higher than this code can handle, probably due to loading an older pbw.
+		// Delete it to avoid crash. 
+		persist_delete(CLAY_SETTINGS_KEY);
+		return false;
+	}
   }
 
   // Migration is complete, store the current storage scheme version number
   persist_write_int(STORAGE_VERSION_KEY, STORAGE_VERSION);
+  return true;
 }
 	
 bool clay_loadPersistentSettings(CLAYSETTINGS *settings) {
@@ -193,8 +200,8 @@ void clay_savePersistentSettings(CLAYSETTINGS *settings, WEATHERDATA *weatherDat
 
 void clay_set_default_settings(CLAYSETTINGS *settings) {
 	if (persist_exists(STORAGE_VERSION_KEY) && persist_exists(CLAY_SETTINGS_KEY)) {
-		clay_migrate_storage_data(settings);
-		bool ok = clay_loadPersistentSettings(settings);		
+		bool ok = clay_migrate_storage_data(settings);
+		ok = ok && clay_loadPersistentSettings(settings);		
 		if (ok) { return; }
   	}
 
