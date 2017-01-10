@@ -97,6 +97,10 @@ module.exports =
     		{ 
     			"label": "OpenWeatherMap",
     			"value": "1" 
+    		},
+    		{ 
+    			"label": "Dark Sky",
+    			"value": "2"
     		}
   		]
 	  }

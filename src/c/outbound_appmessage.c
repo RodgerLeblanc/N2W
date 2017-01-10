@@ -39,13 +39,13 @@ void outbound_ask_js_to_simulate_notification(int notification_count) {
 	outbound_outbox_send();
 }
 
-void outbound_ask_js_to_request_weather(int weatherService, char *owm_api_key) {
+void outbound_ask_js_to_request_weather(int weatherService, char *api_key) {
 	DictionaryIterator *out;
 	if (!outbound_outbox_begin(&out)) return;
 
 	dict_write_int8(out, WEATHER_REQUEST, weatherService);
-	if (weatherService == (int)WEATHER_OPEN_WEATHER_MAP)
-		dict_write_cstring(out, WEATHER_API, owm_api_key);
+	if ((weatherService == (int)WEATHER_OPEN_WEATHER_MAP) || (weatherService == (int)WEATHER_DARK_SKY))
+		dict_write_cstring(out, WEATHER_API, api_key);
 
 	outbound_outbox_send();
 }

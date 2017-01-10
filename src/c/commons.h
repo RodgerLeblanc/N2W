@@ -80,7 +80,8 @@ enum Watchface {
 
 enum WeatherService {
 	WEATHER_YAHOO = 0,
-	WEATHER_OPEN_WEATHER_MAP = 1
+	WEATHER_OPEN_WEATHER_MAP = 1,
+	WEATHER_DARK_SKY = 2
 };
 
 enum HubKey {

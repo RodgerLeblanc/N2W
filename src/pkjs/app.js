@@ -3,7 +3,10 @@ var clayConfig = require('./config');
 var clay = new Clay(clayConfig);
 
 var noCityErrorShown = false;
-var weatherApi = "";
+var weatherApi = {
+	'owm': '',
+	'dark_sky': ''
+};
 var weatherService = -1;
 var lastPosition = {};
 
@@ -11,6 +14,8 @@ var settings = {};
 var units = '';
 var city = "";
 var url = "";
+
+var cityGps = {}
 
 function retrieveSettings() {
 	try {
@@ -22,6 +27,10 @@ function retrieveSettings() {
 
 function unitsToOWMUnits(u) {
 	return (u === 'f') ? "imperial" : "metric";
+}
+
+function unitsToDarkSkyUnits(u) {
+	return (u === 'f') ? "us" : "ca";
 }
 
 function send_dict(slots) {
@@ -71,10 +80,24 @@ function locationSuccess(pos) {
 	
 	if (weatherService === -1) return;
 	
-	if (weatherService === 0)
-		fetchYahooWeather();
-	else
-		fetchOWMWeather();
+	switch (weatherService) {
+		case 0: {
+			fetchYahooWeather();
+			break;
+		}
+		case 1: {
+			fetchOWMWeather();
+			break;
+		}
+		case 2: {
+			callDarkSkyApi(lastPosition.latitude, lastPosition.longitude);
+			break;
+		}
+		default: {
+			fetchYahooWeather();
+			break;
+		}
+	}
 }
 
 function locationError(err) {
@@ -176,6 +199,25 @@ function iconFromOWMIcon(code)  {
 	}
 } 
 
+function iconFromDarkSkyIcon(code)  {
+	switch(code) {
+		case "clear-day": return 0;
+		case "clear-night": return 1;
+		case "rain": return 12;
+		case "snow": return 16;
+		case "sleet": return 15;
+		case "wind": return 19;
+		case "fog": return 6;
+		case "cloudy": return 3;
+		case "partly-cloudy-day": return 9;
+		case "partly-cloudy-night": return 10;
+		case "hail": return 15;
+		case "thunderstorm": return 18;
+		case "tornado": return 19;
+		default: return 8;
+	}
+} 
+
 function fetchYahooWeather() {
 	console.log('fetchYahooWeather()');
 
@@ -203,6 +245,67 @@ function fetchYahooWeather() {
 	}	
 
 	var req = new XMLHttpRequest();
+	console.log(encodeURI(url));
+  	req.open('GET', encodeURI(url), true);
+  	req.onload = function () {
+    if (req.readyState === 4) {
+      if (req.status === 200) {
+        console.log(req.responseText);
+        var response = JSON.parse(req.responseText);
+		console.log(JSON.stringify(response));
+		if (response.query.count > 0) {
+			var temperature = Math.round(response.query.results.channel.item.condition.temp);
+			var icon = iconFromYahooIcon(response.query.results.channel.item.condition.code);
+
+        	console.log(temperature);
+        	console.log(icon);
+        	Pebble.sendAppMessage({
+		  		'WEATHER_ICON': icon,
+          		'WEATHER_TEMP': temperature,
+			});
+		  }
+		  else {
+			Pebble.sendAppMessage({
+		  		'WEATHER_ERROR': -1,
+			});
+		  }
+      } else {
+		console.log('Error, status code: ' + req.status);
+        Pebble.sendAppMessage({
+		  'WEATHER_ERROR': -1,
+		});
+      }
+    }
+  };
+  req.send(null);
+}
+
+function fetchOWMWeather() {
+	console.log('fetchOWMWeather()');
+
+	if (city) {
+		if (city === "CellNinja")
+			city = "San Francisco, USA";
+	
+		url = 'http://api.openweathermap.org/data/2.5/weather' +
+    		'?q=' + city +
+    		'&units=' + unitsToOWMUnits(units) + 
+			'&appid=' + weatherApi.owm;
+	}
+	else {
+		if (lastPosition.latitude !== undefined) {
+			url = 'http://api.openweathermap.org/data/2.5/weather' +
+    			'?lat=' + lastPosition.latitude +
+    			'&lon=' + lastPosition.longitude + 
+    			'&units=' + unitsToOWMUnits(units) + 
+				'&appid=' + weatherApi.owm;
+		}
+		else {
+			return;
+		}
+	}
+	
+	var req = new XMLHttpRequest();
 	//console.log(encodeURI(url));
   	req.open('GET', encodeURI(url), true);
   	req.onload = function () {
@@ -210,9 +313,10 @@ function fetchYahooWeather() {
       if (req.status === 200) {
         console.log(req.responseText);
         var response = JSON.parse(req.responseText);
-		  if (response.query.count > 0) {
-			var temperature = Math.round(response.query.results.channel.item.condition.temp);
-			var icon = iconFromYahooIcon(response.query.results.channel.item.condition.code);
+		  if (response) {
+			console.log(JSON.stringify(response));
+			var temperature = Math.round(response.main.temp);
+			var icon = iconFromOWMIcon(response.weather[0].icon);
 
         	console.log(temperature);
         	console.log(icon);
@@ -237,30 +341,70 @@ function fetchYahooWeather() {
   req.send(null);
 }
 
-function fetchOWMWeather() {
-	console.log('fetchOWMWeather()');
+function fetchDarkSkyWeather() {
+	console.log('fetchDarkSkyWeather()');
 
 	if (city) {
 		if (city === "CellNinja")
 			city = "San Francisco, USA";
 	
-		url = 'http://api.openweathermap.org/data/2.5/weather' +
-    		'?q=' + city +
-    		'&units=' + unitsToOWMUnits(units) + 
-			'&appid=' + weatherApi;
-	}
-	else {
-		if (lastPosition.latitude !== undefined) {
-			url = 'http://api.openweathermap.org/data/2.5/weather' +
-    			'?lat=' + lastPosition.latitude +
-    			'&lon=' + lastPosition.longitude + 
-    			'&units=' + unitsToOWMUnits(units) + 
-				'&appid=' + weatherApi;
-		}
-		else {
+		var cityNameEncoded = encodeURIComponent(city);
+		if (cityGps.cityNameEncoded !== undefined) {
+			callDarkSkyApi(cityGps.cityNameEncoded.lat, cityGps.cityNameEncoded.lon);
 			return;
 		}
+		
+		var googleMapsUrl = 'http://maps.google.com/maps/api/geocode/json?address=' + city;
+		var req = new XMLHttpRequest();
+		//console.log(encodeURI(googleMapsUrl));
+  		req.open('GET', encodeURI(googleMapsUrl), true);
+  		req.onload = function () {
+    	if (req.readyState === 4) {
+      		if (req.status === 200) {
+        		//console.log(req.responseText);
+        		var response = JSON.parse(req.responseText);
+				if (response) {
+					//console.log(JSON.stringify(response));
+					var latitude = response.results[0].geometry.location.lat;
+					var longitude = response.results[0].geometry.location.lng;
+
+					console.log('latitude: ' + latitude);
+					console.log('longitude: ' + longitude);
+					
+					var cityNameEncoded = encodeURIComponent(city);
+					cityGps.cityNameEncoded = {
+						'lat': latitude,
+						'lon': longitude
+					}
+					callDarkSkyApi(latitude, longitude);
+		  		}
+				else {
+					navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions); 
+				}
+			} else {
+				console.log('Error');
+				navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions); 
+    		}
+		}
+	};
+	req.send(null);
+  }
+  else {
+	if (lastPosition.latitude !== undefined) {
+		callDarkSkyApi(lastPosition.latitude, lastPosition.longitude);
 	}
+	else {
+		return;
+	}
+  }
+}
+
+function callDarkSkyApi(latitude, longitude) {
+	url = 'https://api.darksky.net/forecast/' +
+		weatherApi.dark_sky + '/' +
+		latitude + ',' + longitude +
+    	'?units=' + unitsToDarkSkyUnits(units) +
+		'&exclude=minutely,hourly,daily,alerts,flags';
 	
 	var req = new XMLHttpRequest();
 	//console.log(encodeURI(url));
@@ -268,12 +412,12 @@ function fetchOWMWeather() {
   	req.onload = function () {
     if (req.readyState === 4) {
       if (req.status === 200) {
-        //console.log(req.responseText);
+        console.log(req.responseText);
         var response = JSON.parse(req.responseText);
 		  if (response) {
-			//console.log(JSON.stringify(response))
-			var temperature = Math.round(response.main.temp);
-			var icon = iconFromOWMIcon(response.weather[0].icon);
+			console.log(JSON.stringify(response));
+			var temperature = Math.round(response.currently.temperature);
+			var icon = iconFromDarkSkyIcon(response.currently.icon);
 
         	console.log(temperature);
         	console.log(icon);
@@ -305,7 +449,10 @@ Pebble.addEventListener('appmessage', function (e) {
 	  send_dict(dict.NUMBER_OF_SLOTS);
   }
   if (dict.WEATHER_API) {
-	  weatherApi = dict.WEATHER_API;
+	  if (dict.WEATHER_REQUEST === 1)
+	  	weatherApi.owm = dict.WEATHER_API;
+	  else if (dict.WEATHER_REQUEST === 2)
+	  	weatherApi.dark_sky = dict.WEATHER_API;
   }
   if (dict.WEATHER_REQUEST !== undefined) {
 	  weatherService = dict.WEATHER_REQUEST;
@@ -313,14 +460,28 @@ Pebble.addEventListener('appmessage', function (e) {
 	  
 	  retrieveSettings();
 	  
-	  if (!city) { 
+	  if (!city) {
 		  navigator.geolocation.getCurrentPosition(locationSuccess, locationError, locationOptions); 
 		  return;
 	  }
 
-	  if (weatherService === 0)
-		fetchYahooWeather();
-	  else
-		fetchOWMWeather();
+	  switch(weatherService) {
+		  case 0: {
+			fetchYahooWeather();
+			break;
+		  }
+		  case 1: {
+			fetchOWMWeather();
+			break;
+		  }
+		  case 2: {
+			fetchDarkSkyWeather();
+			break;
+		  }
+		  default: {
+			fetchYahooWeather();
+			break;
+		  }
+	  }
   }
 });

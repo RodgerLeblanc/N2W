@@ -4,7 +4,7 @@
 #include "gbitmap_color_palette_manipulator.h"
 #include "log.h"
 #include "outbound_appmessage.h"
-#include "owm_api_key.h"
+#include "weather_api_key.h"
 #include "pebble-helpers.h"
 #include "vibration.h"
 #include "weather.h"
@@ -642,7 +642,10 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 void fetch_weather() {
 	if (weather_is_last_weather_old(&weatherData) || !weather_is_last_weather_valid(&weatherData)) {
 		APP_LOG(APP_LOG_LEVEL_DEBUG, "Fetch weather request");
-		outbound_ask_js_to_request_weather(weatherData.weatherService, owm_api_key);
+		if (weatherData.weatherService == WEATHER_DARK_SKY)
+			outbound_ask_js_to_request_weather(weatherData.weatherService, dark_sky_api_key);
+		else
+			outbound_ask_js_to_request_weather(weatherData.weatherService, owm_api_key);
 	}
 }
 
