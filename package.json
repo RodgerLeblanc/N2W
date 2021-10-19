@@ -151,6 +151,12 @@
                     "type": "bitmap"
                 },
                 {
+                    "file": "images/teams_34.png",
+                    "name": "ICON_TEAMS_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/talk_34.png",
                     "name": "ICON_GOOGLE_TALK_34",
                     "targetPlatforms": null,
