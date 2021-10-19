@@ -57,12 +57,6 @@
         "resources": {
             "media": [
                 {
-                    "file": "images/signal_34.png",
-                    "name": "ICON_SIGNAL_34",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
                     "file": "images/youtube_34.png",
                     "name": "ICON_YOUTUBE_34",
                     "targetPlatforms": null,
@@ -209,6 +203,12 @@
                 {
                     "file": "images/skype_34.png",
                     "name": "ICON_SKYPE_34",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/signal_34.png",
+                    "name": "ICON_SIGNAL_34",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
