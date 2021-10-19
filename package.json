@@ -169,6 +169,11 @@
                     "type": "bitmap"
                 },
                 {
+                    "file": "images/spark_34.png",
+                    "name": "ICON_SPARK_34",
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/snow_34.png",
                     "name": "SNOW_34",
                     "type": "bitmap"
@@ -675,5 +680,5 @@
             "watchface": true
         }
     },
-    "version": "1.24.0"
+    "version": "1.25.0"
 }

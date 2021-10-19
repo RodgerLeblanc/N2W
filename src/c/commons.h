@@ -218,4 +218,5 @@ static uint32_t ALL_ICONS_34[] = {
   RESOURCE_ID_ICON_DASHBOARD_34,          // 89
   RESOURCE_ID_ICON_SIGNAL_34,             // 90
   RESOURCE_ID_ICON_TEAMS_34,              // 91
+  RESOURCE_ID_ICON_SPARK_34,              // 92
 };
